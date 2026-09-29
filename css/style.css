@@ -594,3 +594,14 @@ input:valid:not(:placeholder-shown) { border-color: var(--verde); }
 .modal-box .modal-fechar:hover {
     background: #164E73;
 }
+
+/* Acessibilidade: foco visível para navegação por teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #000;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 5px #fff;
+}
