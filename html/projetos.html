@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projetos sociais da ONG Conecta Solidária.">
+  <title>Conecta Solidária - Projetos</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-flex">
+      <a class="brand" href="index.html" aria-label="Conecta Solidária - página inicial">
+        <span class="brand-mark" aria-hidden="true">❤</span>
+        <span>Conecta Solidária</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">☰</button>
+      <nav id="menu-principal" class="menu" aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+        <a class="ativo" href="projetos.html">Projetos</a>
+        <a href="cadastro.html">Cadastro</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container secao">
+    <div class="titulo-pagina">
+      <span class="badge">Projetos sociais</span>
+      <h1>Nossas iniciativas</h1>
+      <p>Conheça algumas ações que conectam pessoas, doações e voluntariado.</p>
+    </div>
+
+    <div class="grid-12">
+      <article class="card projeto-card col-4">
+        <div class="card-icone" aria-hidden="true">🥫</div>
+        <span class="badge">Doação</span>
+        <h2>Alimento que Aproxima</h2>
+        <p>Arrecadação e distribuição de alimentos para famílias em situação de vulnerabilidade.</p>
+        <button class="botao abrir-modal" type="button"
+          data-titulo="Alimento que Aproxima"
+          data-mensagem="A campanha recebe alimentos não perecíveis e organiza a distribuição para famílias cadastradas.">
+          Saiba mais
+        </button>
+      </article>
+
+      <article class="card projeto-card col-4">
+        <div class="card-icone" aria-hidden="true">🧥</div>
+        <span class="badge">Campanha</span>
+        <h2>Campanha do Agasalho</h2>
+        <p>Coleta de roupas e cobertores para pessoas que precisam de apoio durante o inverno.</p>
+        <button class="botao abrir-modal" type="button"
+          data-titulo="Campanha do Agasalho"
+          data-mensagem="A campanha recebe roupas e cobertores em bom estado para distribuição durante o período de frio.">
+          Participar
+        </button>
+      </article>
+
+      <article class="card projeto-card col-4">
+        <div class="card-icone" aria-hidden="true">🤝</div>
+        <span class="badge">Voluntariado</span>
+        <h2>Seja voluntário</h2>
+        <p>Participe da organização de doações, campanhas e atendimento ao público.</p>
+        <button class="botao abrir-modal" type="button"
+          data-titulo="Seja voluntário"
+          data-mensagem="Cadastre-se para receber informações sobre oportunidades de voluntariado da Conecta Solidária.">
+          Quero ajudar
+        </button>
+      </article>
+    </div>
+  </main>
+
+  <div id="modal-projeto" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" hidden>
+    <div class="modal-conteudo">
+      <button class="modal-fechar" type="button" aria-label="Fechar janela">×</button>
+      <h2 id="modal-titulo">Informações</h2>
+      <p id="modal-texto"></p>
+      <div class="acoes">
+        <a class="botao" href="cadastro.html">Ir para cadastro</a>
+        <button class="botao botao-secundario modal-fechar-secundario" type="button">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container"><p>ONG Conecta Solidária</p></div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="../js/script.js"></script>
+</body>
+</html>

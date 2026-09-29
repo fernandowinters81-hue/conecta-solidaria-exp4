@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página inicial da ONG Conecta Solidária.">
+  <title>Conecta Solidária - Início</title>
+  <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-flex">
+      <a class="brand" href="index.html" aria-label="Conecta Solidária - página inicial">
+        <span class="brand-mark" aria-hidden="true">❤</span>
+        <span>Conecta Solidária</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">☰</button>
+      <nav id="menu-principal" class="menu" aria-label="Navegação principal">
+        <a class="ativo" href="#inicio">Início</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#cadastro">Cadastro</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="app">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">Apoio social</span>
+          <h1>Apoio, doação e voluntariado</h1>
+          <p>A Conecta Solidária aproxima pessoas que desejam ajudar de projetos sociais que precisam de apoio.</p>
+          <div class="acoes">
+            <a class="botao" href="#projetos">Conhecer projetos</a>
+            <a class="botao botao-secundario" href="#cadastro">Quero participar</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Ilustração da Conecta Solidária">
+          <div class="conexao" aria-hidden="true">
+            <span class="circulo circulo-1"></span>
+            <span class="circulo circulo-2"></span>
+            <span class="linha"></span>
+          </div>
+          <div class="coracao" aria-hidden="true">♥</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container secao">
+      <h2>Quem somos</h2>
+      <p>A Conecta Solidária apoia famílias em situação de vulnerabilidade por meio de arrecadação de alimentos, roupas e participação voluntária.</p>
+    </section>
+
+    <section class="container secao">
+      <div class="grid-12">
+        <article class="card col-4">
+          <span class="badge">Doação</span>
+          <h2>Alimento que Aproxima</h2>
+          <p>Arrecadação e distribuição de alimentos para famílias que precisam de apoio.</p>
+          <a class="link-card" href="projetos.html">Ver projeto</a>
+        </article>
+
+        <article class="card col-4">
+          <span class="badge">Campanha</span>
+          <h2>Campanha do Agasalho</h2>
+          <p>Coleta de roupas e cobertores para pessoas em situação de vulnerabilidade.</p>
+          <a class="link-card" href="projetos.html">Ver campanha</a>
+        </article>
+
+        <article class="card col-4">
+          <span class="badge">Voluntariado</span>
+          <h2>Faça parte</h2>
+          <p>Participe das ações da ONG e colabore com atividades de apoio social.</p>
+          <a class="link-card" href="cadastro.html">Quero participar</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="container secao">
+      <div class="alerta alerta-sucesso" role="status">
+        <strong>Projeto responsivo:</strong> esta interface foi construída com CSS Grid, Flexbox, componentes reutilizáveis e cinco pontos de quebra.
+      </div>
+    </section>
+  </main>
+
+  <template id="template-projetos"><div class="titulo-pagina">
+      <span class="badge">Projetos sociais</span>
+      <h1>Nossas iniciativas</h1>
+      <p>Conheça algumas ações que conectam pessoas, doações e voluntariado.</p>
+    </div>
+    <div class="grid-12">
+      <article class="card projeto-card col-4">
+        <div class="card-icone" aria-hidden="true">🥫</div>
+        <span class="badge">Doação</span>
+        <h2>Alimento que Aproxima</h2>
+        <p>Arrecadação e distribuição de alimentos para famílias em situação de vulnerabilidade.</p>
+        <button class="botao abrir-modal" type="button"
+          data-titulo="Alimento que Aproxima"
+          data-mensagem="A campanha recebe alimentos não perecíveis e organiza a distribuição para famílias cadastradas.">
+          Saiba mais
+        </button>
+      </article>
+
+      <article class="card projeto-card col-4">
+        <div class="card-icone" aria-hidden="true">🧥</div>
+        <span class="badge">Campanha</span>
+        <h2>Campanha do Agasalho</h2>
+        <p>Coleta de roupas e cobertores para pessoas que precisam de apoio durante o inverno.</p>
+        <button class="botao abrir-modal" type="button"
+          data-titulo="Campanha do Agasalho"
+          data-mensagem="A campanha recebe roupas e cobertores em bom estado para distribuição durante o período de frio.">
+          Participar
+        </button>
+      </article>
+
+      <article class="card projeto-card col-4">
+        <div class="card-icone" aria-hidden="true">🤝</div>
+        <span class="badge">Voluntariado</span>
+        <h2>Seja voluntário</h2>
+        <p>Participe da organização de doações, campanhas e atendimento ao público.</p>
+        <button class="botao abrir-modal" type="button"
+          data-titulo="Seja voluntário"
+          data-mensagem="Cadastre-se para receber informações sobre oportunidades de voluntariado da Conecta Solidária.">
+          Quero ajudar
+        </button>
+      </article>
+    </div>
+<div id="modal-projeto" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" hidden>
+    <div class="modal-conteudo">
+      <button class="modal-fechar" type="button" aria-label="Fechar janela">×</button>
+      <h2 id="modal-titulo">Informações</h2>
+      <p id="modal-texto"></p>
+      <div class="acoes">
+        <a class="botao" href="#cadastro">Ir para cadastro</a>
+        <button class="botao botao-secundario modal-fechar-secundario" type="button">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+</template>
+  <template id="template-cadastro"><div class="titulo-pagina">
+      <span class="badge">Cadastro</span>
+      <h1>Faça parte da Conecta Solidária</h1>
+      <p>Preencha os campos abaixo. Os campos obrigatórios são validados pelo navegador.</p>
+    </div>
+
+    <form id="form-cadastro" class="formulario" action="#" method="post">
+      <fieldset>
+        <legend>Dados pessoais</legend>
+        <div class="form-grid">
+          <div class="campo campo-12">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" autocomplete="name" required>
+            <small class="ajuda">Informe seu nome completo.</small>
+          </div>
+
+          <div class="campo campo-6">
+            <label for="nascimento">Data de nascimento</label>
+            <input type="date" id="nascimento" name="nascimento" required>
+          </div>
+
+          <div class="campo campo-6">
+            <label for="cpf">CPF</label>
+            <input type="text" id="cpf" name="cpf" inputmode="numeric"
+              placeholder="000.000.000-00"
+              pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}"
+              title="Digite o CPF no formato 000.000.000-00"
+              maxlength="14" required>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Contato</legend>
+        <div class="form-grid">
+          <div class="campo campo-6">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+
+          <div class="campo campo-6">
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" autocomplete="tel"
+              placeholder="(11) 99999-9999"
+              pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}"
+              title="Digite o telefone no formato (11) 99999-9999"
+              maxlength="15" required>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Endereço</legend>
+        <div class="form-grid">
+          <div class="campo campo-4">
+            <label for="cep">CEP</label>
+            <input type="text" id="cep" name="cep" inputmode="numeric"
+              placeholder="00000-000"
+              pattern="[0-9]{5}-[0-9]{3}"
+              title="Digite o CEP no formato 00000-000"
+              maxlength="9" required>
+          </div>
+
+          <div class="campo campo-8">
+            <label for="endereco">Endereço</label>
+            <input type="text" id="endereco" name="endereco" required>
+          </div>
+
+          <div class="campo campo-8">
+            <label for="cidade">Cidade</label>
+            <input type="text" id="cidade" name="cidade" required>
+          </div>
+
+          <div class="campo campo-4">
+            <label for="estado">Estado</label>
+            <select id="estado" name="estado" required>
+              <option value="">Selecione</option>
+              <option value="SP">SP</option>
+              <option value="RJ">RJ</option>
+              <option value="MG">MG</option>
+              <option value="ES">ES</option>
+              <option value="PR">PR</option>
+              <option value="SC">SC</option>
+              <option value="RS">RS</option>
+              <option value="DF">DF</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="acoes-formulario">
+        <button class="botao botao-secundario" type="reset">Limpar</button>
+        <button class="botao" type="submit">Enviar cadastro</button>
+      </div>
+
+      <div id="mensagem-form" class="alerta" role="status" aria-live="polite" hidden></div>
+    </form>
+
+    <section class="secao secao-feedback">
+      <h2>Componentes de feedback</h2>
+      <p>Use estes elementos como exemplo para a captura de tela pedida no DreamShaper.</p>
+
+      <div class="feedback-demo">
+        <span class="badge">Voluntário</span>
+        <div class="alerta alerta-sucesso">✓ Dados validados com sucesso.</div>
+        <div class="alerta alerta-erro">Atenção: revise os campos obrigatórios antes do envio.</div>
+        <button id="testar-toast" class="botao" type="button">Testar notificação</button>
+      </div>
+    </section>
+<div id="modal-confirmacao" class="modal-overlay">
+  <div class="modal-box">
+    <h2>Cadastro realizado com sucesso!</h2>
+    <p>Obrigado por fazer parte da Conecta Solidária.</p>
+    <button type="button" id="fechar-modal" class="modal-fechar">
+      Fechar
+    </button>
+  </div>
+</div>
+
+</template>
+
+  <footer class="site-footer">
+    <div class="container"><p>ONG Conecta Solidária</p></div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+ <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script> 
+<script src="../js/dados.js"></script>
+<script src="../js/notificacoes.js"></script>
+<script src="../js/storage.js"></script>
+<script src="../js/script.js"></script>
+</body>
+</html>
