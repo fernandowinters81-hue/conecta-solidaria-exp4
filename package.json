@@ -1,0 +1,25 @@
+{
+  "name": "conecta-solidaria-exp3",
+  "version": "1.0.0",
+  "description": "\\# Conecta Solidária",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vite build html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fernandowinters81-hue/conecta-solidaria-exp4.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/fernandowinters81-hue/conecta-solidaria-exp4/issues"
+  },
+  "homepage": "https://github.com/fernandowinters81-hue/conecta-solidaria-exp4#readme",
+  "devDependencies": {
+    "vite": "^8.3.2"
+  }
+}
