@@ -1,27 +1,27 @@
 ﻿ const dadosProjetos = [
     {
-      icone: "ðŸ¥«",
-      categoria: "DoaÃ§Ã£o",
+      icone: "🥫",
+      categoria: "Doação",
       titulo: "Alimento que Aproxima",
-      descricao: "ArrecadaÃ§Ã£o e distribuiÃ§Ã£o de alimentos para famÃ­lias em situaÃ§Ã£o de vulnerabilidade.",
+      descricao: "Arrecadação e distribuição de alimentos para famílias em situação de vulnerabilidade.",
       botao: "Saiba mais",
-      mensagem: "A campanha recebe alimentos nÃ£o perecÃ­veis e organiza a distribuiÃ§Ã£o para famÃ­lias cadastradas."
+      mensagem: "A campanha recebe alimentos não perecíveis e organiza a distribuição para famílias cadastradas."
     },
     {
-      icone: "ðŸ§¥",
+      icone: "🧥",
       categoria: "Campanha",
       titulo: "Campanha do Agasalho",
       descricao: "Coleta de roupas e cobertores para pessoas que precisam de apoio durante o inverno.",
       botao: "Participar",
-      mensagem: "A campanha recebe roupas e cobertores em bom estado para distribuiÃ§Ã£o durante o perÃ­odo de frio."
+      mensagem: "A campanha recebe roupas e cobertores em bom estado para distribuição durante o período de frio."
     },
     {
-      icone: "ðŸ¤",
+      icone: "🤝",
       categoria: "Voluntariado",
-      titulo: "Seja voluntÃ¡rio",
-      descricao: "Participe da organizaÃ§Ã£o de doaÃ§Ãµes, campanhas e atendimento ao pÃºblico.",
+      titulo: "Seja voluntário",
+      descricao: "Participe da organização de doações, campanhas e atendimento ao público.",
       botao: "Quero ajudar",
-      mensagem: "Cadastre-se para receber informaÃ§Ãµes sobre oportunidades de voluntariado da Conecta SolidÃ¡ria."
+      mensagem: "Cadastre-se para receber informações sobre oportunidades de voluntariado da Conecta Solidária."
     }
   ];
 function mostrarToast(mensagem) {
@@ -58,7 +58,7 @@ function salvarCadastroLocal(formulario) {
       new FormData(formulario).entries()
     );
 
-    // NÃ£o armazenar dados mais sensÃ­veis no localStorage
+    // Não armazenar dados mais sensíveis no localStorage
     delete dados.cpf;
     delete dados.nascimento;
 
@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
       botao.addEventListener("click", () => {
         if (titulo) {
           titulo.textContent =
-            botao.dataset.titulo || "InformaÃ§Ãµes";
+            botao.dataset.titulo || "Informações";
         }
 
         if (texto) {
@@ -251,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (botaoToastSPA) {
       botaoToastSPA.addEventListener("click", () => {
         mostrarToast(
-          "âœ“ Cadastro realizado com sucesso!"
+          "✓ Cadastro realizado com sucesso!"
         );
       });
     }
