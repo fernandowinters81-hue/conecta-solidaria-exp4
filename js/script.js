@@ -31,11 +31,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const links = document.querySelectorAll("#menu-principal a");
 
     links.forEach((link) => {
-      link.classList.toggle(
-        "ativo",
-        link.getAttribute("href") === rota
-      );
-    });
+    const ativo = link.getAttribute("href") === rota;
+
+    link.classList.toggle("ativo", ativo);
+
+    if (ativo) {
+        link.setAttribute("aria-current", "page");
+    } else {
+        link.removeAttribute("aria-current");
+    }
+});
   }
 
   
