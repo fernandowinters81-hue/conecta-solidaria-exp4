@@ -1,3 +1,96 @@
+﻿ const dadosProjetos = [
+    {
+      icone: "ðŸ¥«",
+      categoria: "DoaÃ§Ã£o",
+      titulo: "Alimento que Aproxima",
+      descricao: "ArrecadaÃ§Ã£o e distribuiÃ§Ã£o de alimentos para famÃ­lias em situaÃ§Ã£o de vulnerabilidade.",
+      botao: "Saiba mais",
+      mensagem: "A campanha recebe alimentos nÃ£o perecÃ­veis e organiza a distribuiÃ§Ã£o para famÃ­lias cadastradas."
+    },
+    {
+      icone: "ðŸ§¥",
+      categoria: "Campanha",
+      titulo: "Campanha do Agasalho",
+      descricao: "Coleta de roupas e cobertores para pessoas que precisam de apoio durante o inverno.",
+      botao: "Participar",
+      mensagem: "A campanha recebe roupas e cobertores em bom estado para distribuiÃ§Ã£o durante o perÃ­odo de frio."
+    },
+    {
+      icone: "ðŸ¤",
+      categoria: "Voluntariado",
+      titulo: "Seja voluntÃ¡rio",
+      descricao: "Participe da organizaÃ§Ã£o de doaÃ§Ãµes, campanhas e atendimento ao pÃºblico.",
+      botao: "Quero ajudar",
+      mensagem: "Cadastre-se para receber informaÃ§Ãµes sobre oportunidades de voluntariado da Conecta SolidÃ¡ria."
+    }
+  ];
+function mostrarToast(mensagem) {
+const toast = document.getElementById("toast");
+  if (typeof Toastify !== "undefined") {
+    Toastify({
+      text: mensagem,
+      duration: 3000,
+      gravity: "bottom",
+      position: "right",
+      close: true
+    }).showToast();
+
+    return;
+  }
+
+  if (!toast) return;
+
+  toast.textContent = mensagem;
+  toast.classList.add("ativo");
+
+  window.clearTimeout(mostrarToast.timer);
+
+  mostrarToast.timer = window.setTimeout(() => {
+    toast.classList.remove("ativo");
+  }, 3000);
+}
+const CHAVE_CADASTRO = "conectaSolidariaCadastro";
+
+function salvarCadastroLocal(formulario) {
+    if (!formulario) return;
+
+    const dados = Object.fromEntries(
+      new FormData(formulario).entries()
+    );
+
+    // NÃ£o armazenar dados mais sensÃ­veis no localStorage
+    delete dados.cpf;
+    delete dados.nascimento;
+
+    localStorage.setItem(
+      CHAVE_CADASTRO,
+      JSON.stringify(dados)
+    );
+  }
+
+  function restaurarCadastroLocal(formulario) {
+    if (!formulario) return;
+
+    const dadosSalvos =
+      localStorage.getItem(CHAVE_CADASTRO);
+
+    if (!dadosSalvos) return;
+
+    try {
+      const dados = JSON.parse(dadosSalvos);
+
+      Object.entries(dados).forEach(([nome, valor]) => {
+        const campo =
+          formulario.elements.namedItem(nome);
+
+        if (campo) {
+          campo.value = valor;
+        }
+      });
+    } catch (erro) {
+      localStorage.removeItem(CHAVE_CADASTRO);
+    }
+  }
 document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.querySelector(".menu-toggle");
   const menu = document.querySelector(".menu");
@@ -104,7 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
       botao.addEventListener("click", () => {
         if (titulo) {
           titulo.textContent =
-            botao.dataset.titulo || "Informações";
+            botao.dataset.titulo || "InformaÃ§Ãµes";
         }
 
         if (texto) {
@@ -158,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (botaoToastSPA) {
       botaoToastSPA.addEventListener("click", () => {
         mostrarToast(
-          "✓ Cadastro realizado com sucesso!"
+          "âœ“ Cadastro realizado com sucesso!"
         );
       });
     }
